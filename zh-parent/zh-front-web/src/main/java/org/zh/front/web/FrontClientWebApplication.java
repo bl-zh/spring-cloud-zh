@@ -8,7 +8,7 @@ import org.zh.api.service.UserService;
 
 @SpringBootApplication
 @EnableEurekaClient
-@EnableFeignClients(clients=UserService.class)
+@EnableFeignClients(basePackages="org.zh.api.service")
 public class FrontClientWebApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FrontClientWebApplication.class, args);
