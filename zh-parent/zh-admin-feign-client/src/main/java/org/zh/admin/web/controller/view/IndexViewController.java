@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.zh.admin.web.controller.view;
 
@@ -16,28 +16,44 @@ import org.zh.api.service.UserService;
 
 /**
  * @author HDP23
- *
  */
 @Controller
 public class IndexViewController {
-	private final UserService userService;
-	@Autowired
-	public IndexViewController(UserService userService){
-		this.userService= userService;
-	}
-	@GetMapping({"/index",""})
-    public String index(Model model,HttpServletRequest request){
-       return "index";
+    private final UserService userService;
+
+    @Autowired
+    public IndexViewController(UserService userService) {
+        this.userService = userService;
     }
-	@GetMapping("/blank")
-    public String blank(Model model,HttpServletRequest request){
-       return "blank";
+
+    @GetMapping({"/index", ""})
+    public String index(Model model, HttpServletRequest request) {
+        return "index";
     }
-	@GetMapping("/table")
-	public String table(Model model){
-		List<UserInfoDTO> list = userService.findAll();
-		model.addAttribute("data", list);
-		return "table-datatable";
-	}
+
+    @GetMapping("/blank")
+    public String blank(Model model, HttpServletRequest request) {
+        return "blank";
+    }
+
+    /**
+     * 登入成功之后的后台页面
+     *
+     * @param model
+     * @param request
+     * @return
+     */
+    @GetMapping("/backend")
+    public String backend(Model model, HttpServletRequest request) {
+        model.addAttribute("active","backend");
+        return "backend";
+    }
+
+    @GetMapping("/table")
+    public String table(Model model) {
+        List<UserInfoDTO> list = userService.findAll();
+        model.addAttribute("data", list);
+        return "table-datatable";
+    }
 
 }
