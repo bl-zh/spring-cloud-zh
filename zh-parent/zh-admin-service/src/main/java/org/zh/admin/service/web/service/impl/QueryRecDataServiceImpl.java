@@ -162,18 +162,20 @@ public class QueryRecDataServiceImpl implements QueryRecDataService {
 	 * @return
 	 */
 	private String getProductIdStrNew(int userId){
-		StringBuffer sbuf = new StringBuffer();
-		Order order =orderRepository.findOrderLast(userId);
-		if(order!=null){
-			Iterable<OrderItem> is = orderItemRepository.findOrderItemByUserIdNew(order.getId());
-			if (is != null) {
-				for (Iterator iter = is.iterator(); iter.hasNext();) {
-					OrderItem u = (OrderItem) iter.next();
-					sbuf.append(u.getProductId()+";");
-				}
-			}
-		}
-		return sbuf.toString();
+		//TODO 先注释掉
+//		StringBuffer sbuf = new StringBuffer();
+//		Order order =orderRepository.findOrderLast(userId);
+//		if(order!=null){
+//			Iterable<OrderItem> is = orderItemRepository.findOrderItemByUserIdNew(order.getId());
+//			if (is != null) {
+//				for (Iterator iter = is.iterator(); iter.hasNext();) {
+//					OrderItem u = (OrderItem) iter.next();
+//					sbuf.append(u.getProductId()+";");
+//				}
+//			}
+//		}
+//		return sbuf.toString();
+		return "";
 	}
 	
 	/**

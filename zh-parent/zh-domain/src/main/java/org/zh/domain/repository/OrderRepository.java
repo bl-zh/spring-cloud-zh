@@ -13,8 +13,8 @@ public interface OrderRepository extends CrudRepository<Order, Integer>{
 	 * @param userId
 	 * @return
 	 */
-	@Query("select id,order_no,userid,create_time,total from order where userid = ?1 order by CREATE_time desc limit 1 ")
-	Order findOrderLast(int userid);
+//	@Query("select a from order a where a.userid = ?1 order by CREATE_time desc limit 1 ")
+//	Order findOrderLast(int userid);
 	@Query(value="select o from Order o where o.createTime <?1")
 	List<Order> findByCreateTimeLessThen(Date createTime);
 }

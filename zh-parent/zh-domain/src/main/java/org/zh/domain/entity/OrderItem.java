@@ -28,6 +28,8 @@ public class OrderItem {
     private String batchCode;
 
     private String productCode;
+    
+    private Integer userId;
 
     public Integer getId() {
         return id;
@@ -108,4 +110,14 @@ public class OrderItem {
     public void setProductCode(String productCode) {
         this.productCode = productCode == null ? null : productCode.trim();
     }
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+    
+    
 }

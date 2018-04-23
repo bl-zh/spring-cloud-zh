@@ -23,6 +23,7 @@ public class OrderItemDTO {
     private String batchCode;
 
     private String productCode;
+    private Long userId;
 
     public Integer getId() {
         return id;
@@ -103,4 +104,14 @@ public class OrderItemDTO {
     public void setProductCode(String productCode) {
         this.productCode = productCode == null ? null : productCode.trim();
     }
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+    
+    
 }
