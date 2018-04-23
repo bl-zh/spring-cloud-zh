@@ -5,7 +5,9 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 @Entity
+@Table(name="`order`")
 public class Order {
 	@Id@GeneratedValue
     private Integer id;
@@ -17,6 +19,10 @@ public class Order {
     private Date createTime;
 
     private Long total;
+    
+    protected Order(){
+    	
+    }
 
     public Integer getId() {
         return id;

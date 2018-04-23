@@ -15,5 +15,5 @@ public interface InventoryService {
 
 	List<Inventory> findInventoryByStatistics(InventoryStatistics inventoryStatistics); 
 
-	
+	double queryProductTotalAmount();
 }
