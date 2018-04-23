@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.zh.admin.service.web.service.QueryRecDataService;
 import org.zh.api.domain.ProductDTO;
@@ -32,7 +33,7 @@ public class QueryRecDataController implements QueryRecommendData {
 	 * @return
 	 */
 	@Override
-	public ArrayList<ProductList> findRecDataByUserId(UserInfoDTO user) {
+	public ArrayList<ProductList> findRecDataByUserId(@RequestBody UserInfoDTO user) {
 		ArrayList<ProductList> list = queryRecDataService.findRecDataByUserId(user.getId());
 		return list;
 	}
@@ -42,7 +43,7 @@ public class QueryRecDataController implements QueryRecommendData {
 	 * @param 
 	 */
 	@Override
-	public ArrayList<ProductList> findRecDataByProId(ProductDTO product) {
+	public ArrayList<ProductList> findRecDataByProId(@RequestBody ProductDTO product) {
 		ArrayList<ProductList> list = queryRecDataService.findRecDataByUserId(product.getId());
 		return list;
 	}

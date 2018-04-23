@@ -8,6 +8,8 @@ import java.util.Set;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.zh.admin.service.web.service.QueryRecDataService;
 import org.zh.api.domain.ProductDTO;
 import org.zh.api.domain.ProductList;
@@ -23,6 +25,8 @@ import org.zh.domain.repository.ProductRepository;
 import org.zh.domain.repository.ProductidSetRepository;
 import org.zh.domain.repository.UserRepository;
 
+@Service
+@Transactional
 public class QueryRecDataServiceImpl implements QueryRecDataService {
 	
 	@Autowired
