@@ -23,6 +23,7 @@ public interface ProductAPIService {
 	@GetMapping(value = "/findAll")
 	public List<ProductDTO> findAll();
 
-	@PostMapping(value = "/saveInventory")
-	public boolean saveInventory(InventoryDTO inventoryDTO);
+	@PostMapping(value = "/createInventory")
+	public boolean saveInventory(@RequestBody InventoryDTO inventoryDTO);
+	
 }
