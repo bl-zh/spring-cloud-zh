@@ -1,5 +1,9 @@
 package org.zh.admin.service.web.service.impl;
 
+import java.math.BigDecimal;
+import java.util.List;
+
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +25,7 @@ public class InventoryServiceImpl implements InventoryService {
 	@Autowired
 	private InventoryStatisticsRepository inventoryStatisticsRepository;
 	
+	
 	@Override
 	public boolean save(InventoryDTO invDTO){
 		Inventory inventory = new Inventory();
@@ -36,5 +41,16 @@ public class InventoryServiceImpl implements InventoryService {
 		statistics.setVersion(0);
 		
 		return inventoryStatisticsRepository.save(statistics)!=null;
+	}
+
+	@Override
+	public double queryProductTotalAmount() {
+		List<Inventory> list = inventoryRepository.findAll();
+		if(CollectionUtils.isEmpty(list))return 0;
+		BigDecimal total=BigDecimal.ZERO;
+		for(Inventory in:list){
+			total=total.add(in.getCostPrice().multiply(new BigDecimal(in.getQuantity())));
+		}
+		return total.doubleValue();
 	}
 }

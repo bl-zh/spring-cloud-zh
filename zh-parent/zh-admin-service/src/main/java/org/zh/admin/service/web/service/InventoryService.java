@@ -6,4 +6,6 @@ public interface InventoryService {
 
 	boolean save(InventoryDTO inve);
 
+	double queryProductTotalAmount();
+
 }

@@ -6,6 +6,7 @@ package org.zh.front.service.web.service.impl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.zh.api.domain.ShopCartDTO;
 import org.zh.domain.entity.ShopCart;
 import org.zh.domain.repository.ShopCartRespository;
@@ -16,6 +17,7 @@ import org.zh.front.service.web.service.ShopCartService;
  *
  */
 @Service
+@Transactional
 public class ShopCartServiceImpl implements ShopCartService {
 	private final ShopCartRespository shopCartRespository;
 	@Autowired

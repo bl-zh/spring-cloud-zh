@@ -1,8 +1,14 @@
 package org.zh.domain.repository;
 
-import org.springframework.data.repository.CrudRepository;
-import org.zh.domain.entity.Inventory;
+import java.util.Date;
+import java.util.List;
 
-public interface OrderRepository extends CrudRepository<Inventory, Integer>{
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.zh.domain.entity.Order;
+
+public interface OrderRepository extends CrudRepository<Order, Integer>{
+	@Query(value="select o from Order o where o.createTime <?1")
+	List<Order> findByCreateTimeLessThen(Date createTime);
 
 }
