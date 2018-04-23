@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.zh.api.domain.InventoryDTO;
 import org.zh.api.domain.ProductDTO;
 
 @FeignClient(value = "zh-admin-service") // 服务提供方应用的名称
@@ -22,4 +23,6 @@ public interface ProductAPIService {
 	@GetMapping(value = "/findAll")
 	public List<ProductDTO> findAll();
 
+	@PostMapping(value = "/saveInventory")
+	public boolean saveInventory(InventoryDTO inventoryDTO);
 }
