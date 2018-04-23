@@ -1,6 +1,7 @@
 package org.zh.api.service;
 
 import java.util.ArrayList;
+
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,8 +14,8 @@ import org.zh.api.domain.UserInfoDTO;
  *
  * 2018年4月20日上午11:12:56
  */
-@FeignClient(value = "zh-admin-service")
-public interface QueryRecommendData {
+@FeignClient(value = "zh-front-service")
+public interface QueryRecDataForFront {
 	
 	/**
 	 * 根据userId查询推荐的商品信息
