@@ -12,6 +12,8 @@
 <link href="theme/green/css/menu.css" rel="stylesheet" type="text/css">
 <link href="theme/green/css/responsive.css" rel="stylesheet" type="text/css">
 
+<link href="custom/css/style.css" rel="stylesheet" type="text/css">
+
 <script src="theme/green/js/modernizr.min.js"></script>
 
 
