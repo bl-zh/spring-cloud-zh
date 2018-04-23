@@ -24,11 +24,10 @@
     <module>zh-front-service</module>
     <module>zh-domain</module>
     <module>zh-admin-feign-client</module>
-    <!--<module>zh-front-feign-client</module>-->
+    <module>zh-front-feign-client</module>
     <module>zh-eureka-server</module>
     <module>zh-api</module>
     <module>zh-admin-serive-web</module>
-    <!--<module>zh-front-service-web</module>-->
   </modules>
   
   <dependencies>
