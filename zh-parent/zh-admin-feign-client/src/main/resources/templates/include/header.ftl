@@ -1,7 +1,5 @@
 <meta charset="utf-8">
 
-<link rel="shortcut icon" href="theme/green/images/favicon_1.ico">
-
 <title>BL.COM - 后台管理系统</title>
 
 <link href="theme/green/css/bootstrap.min.css" rel="stylesheet" type="text/css">
