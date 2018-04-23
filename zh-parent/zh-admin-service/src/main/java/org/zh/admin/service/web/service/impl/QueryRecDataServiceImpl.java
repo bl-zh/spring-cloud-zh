@@ -1,6 +1,7 @@
 package org.zh.admin.service.web.service.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -162,20 +163,33 @@ public class QueryRecDataServiceImpl implements QueryRecDataService {
 	 * @return
 	 */
 	private String getProductIdStrNew(int userId){
-		//TODO 先注释掉
-//		StringBuffer sbuf = new StringBuffer();
-//		Order order =orderRepository.findOrderLast(userId);
-//		if(order!=null){
-//			Iterable<OrderItem> is = orderItemRepository.findOrderItemByUserIdNew(order.getId());
-//			if (is != null) {
-//				for (Iterator iter = is.iterator(); iter.hasNext();) {
-//					OrderItem u = (OrderItem) iter.next();
-//					sbuf.append(u.getProductId()+";");
-//				}
-//			}
-//		}
-//		return sbuf.toString();
-		return "";
+		StringBuffer sbuf = new StringBuffer();
+		List<Order> orders =orderRepository.findOrderByUserid(userId);
+		if(orders!=null&&orders.size()>0){
+			int orderId = 0;
+			Date date = null;
+			for(int i=0;i<orders.size();i++){
+				if(date==null){
+					date = orders.get(i).getCreateTime(); 
+					orderId = orders.get(i).getId();
+				}
+				else{
+					if(date.before(orders.get(i).getCreateTime())){
+						date = orders.get(i).getCreateTime();
+						orderId = orders.get(i).getId();
+					}
+				}
+			}
+			Iterable<OrderItem> is = orderItemRepository.findOrderItemByUserIdNew(orderId);
+			if (is != null) {
+				for (Iterator iter = is.iterator(); iter.hasNext();) {
+					OrderItem u = (OrderItem) iter.next();
+					sbuf.append(u.getProductId()+";");
+				}
+			}
+
+		}
+		return sbuf.toString();
 	}
 	
 	/**
