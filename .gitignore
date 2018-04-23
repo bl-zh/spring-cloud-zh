@@ -10,35 +10,49 @@
 
 /zh-parent/zh-admin-service/.project
 
+/zh-parent/zh-admin-service/target
+
 /zh-parent/zh-domain/.settings
 
 /zh-parent/zh-domain/.project
 
 /zh-parent/zh-domain/.classpath
 
+/zh-parent/zh-domain/target
+
 /zh-parent/zh-front-service/.settings
 
 /zh-parent/zh-front-service/.project
 
 /zh-parent/zh-front-service/.classpath
+/zh-parent/zh-front-service/target
 
-/zh-parent/zh-admin-web/.settings
+/zh-parent/zh-admin-feign-client/.settings
 
-/zh-parent/zh-admin-web/.project
+/zh-parent/zh-admin-feign-client/.project
 
-/zh-parent/zh-admin-web/.classpath
+/zh-parent/zh-admin-feign-client/.classpath
 
+/zh-parent/zh-admin-feign-client/target
 
-/zh-parent/zh-front-web/.settings
+/zh-parent/zh-front-feign-client/.settings
 
-/zh-parent/zh-front-web/.project
+/zh-parent/zh-front-feign-client/.project
 
-/zh-parent/zh-front-web/.classpath
+/zh-parent/zh-front-feign-client/.classpath
+
+/zh-parent/zh-front-feign-client/target
 
 /zh-parent/zh-api/.settings
 
 /zh-parent/zh-api/.project
 
 /zh-parent/zh-api/.classpath
+
+/zh-parent/zh-api/target
+
 /zh-parent/.idea
-/zh-parent/zh-admin-feign-client/target
+/.metadata
+.classpath
+.project
+.settings
