@@ -1,6 +1,7 @@
 package org.zh.admin.service.web.service.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.collections.IteratorUtils;
@@ -22,19 +23,23 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Override
 	public boolean save(ProductDTO productDTO) {
+
 		// TODO Auto-generated method stub
 		Product product = new Product();
 		BeanUtils.copyProperties(productDTO, product);
+		product.setCreateTime(new Date(System.currentTimeMillis()));
 		return productRepository.save(product)!=null;
 	}
 
 	@Override
 	public boolean saveBatch(List<ProductDTO> list) {
 		// TODO Auto-generated method stub
+		Date currDate = new Date(System.currentTimeMillis());
 		List<Product> products = new ArrayList<Product>();
 		for (ProductDTO productDTO : list) {
 			Product product = new Product();
 			BeanUtils.copyProperties(productDTO, product);
+			product.setCreateTime(currDate);
 			products.add(product);
 		}
 		Iterable<Product> save = productRepository.save(products);
