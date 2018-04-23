@@ -49,6 +49,65 @@ public class IndexViewController {
         return "backend";
     }
 
+    /**
+     * 商品主档数据
+     *
+     * @param model
+     * @param request
+     * @return
+     */
+    @GetMapping("/product")
+    public String product(Model model, HttpServletRequest request) {
+        model.addAttribute("active","product");
+        return "product";
+    }
+
+    /**
+     * 历史销售数据
+     *
+     * @param model
+     * @param request
+     * @return
+     */
+    @GetMapping("/order")
+    public String order(Model model, HttpServletRequest request) {
+        model.addAttribute("active","order");
+        return "order";
+    }
+
+    /**
+     * 经营业绩计算器
+     *
+     * @param model
+     * @param request
+     * @return
+     */
+    @GetMapping("/profit")
+    public String profit(Model model, HttpServletRequest request) {
+        model.addAttribute("active","profit");
+        return "profit";
+    }
+
+    /**
+     * 商品推荐模拟器
+     * @param model
+     * @param request
+     * @return
+     */
+    @GetMapping("/simulator")
+    public String simulator(Model model, HttpServletRequest request) {
+        model.addAttribute("active","simulator");
+        return "simulator";
+    }
+
+    @GetMapping("/stock")
+    public String stock(Model model, HttpServletRequest request) {
+        model.addAttribute("active","stock");
+        return "stock";
+    }
+
+
+
     @GetMapping("/table")
     public String table(Model model) {
         List<UserInfoDTO> list = userService.findAll();

@@ -14,17 +14,17 @@
 
 
         <div class="panel-body">
-            <form class="form-horizontal m-t-20" action="index.html">
+            <form class="form-horizontal m-t-20" action="backend">
 
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <input class="form-control input-lg" type="text" required="" placeholder="用户名">
+                        <input class="form-control input-lg" type="text" required="" value="BL_TEST" placeholder="用户名">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-xs-12">
-                        <input class="form-control input-lg" type="password" required="" placeholder="密码">
+                        <input class="form-control input-lg" type="password" required="" value="BL_TEST" placeholder="密码">
                     </div>
                 </div>
 

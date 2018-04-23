@@ -27,7 +27,6 @@
     <module>zh-front-feign-client</module>
     <module>zh-eureka-server</module>
     <module>zh-api</module>
-    <module>zh-admin-serive-web</module>
   </modules>
   
   <dependencies>

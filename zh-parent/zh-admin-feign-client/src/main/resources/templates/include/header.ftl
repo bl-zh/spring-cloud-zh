@@ -1,7 +1,5 @@
 <meta charset="utf-8">
 
-<link rel="shortcut icon" href="theme/green/images/favicon_1.ico">
-
 <title>BL.COM - 后台管理系统</title>
 
 <link href="theme/green/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -11,6 +9,8 @@
 <link href="theme/green/css/pages.css" rel="stylesheet" type="text/css">
 <link href="theme/green/css/menu.css" rel="stylesheet" type="text/css">
 <link href="theme/green/css/responsive.css" rel="stylesheet" type="text/css">
+
+<link href="custom/css/style.css" rel="stylesheet" type="text/css">
 
 <script src="theme/green/js/modernizr.min.js"></script>
 
