@@ -52,3 +52,7 @@
 /zh-parent/zh-api/target
 
 /zh-parent/.idea
+/.metadata
+.classpath
+.project
+.settings
