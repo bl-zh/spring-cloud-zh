@@ -30,7 +30,7 @@ public class AdminServiceProviderApplication {
 		SpringApplication.run(AdminServiceProviderApplication.class, args);
 	}
 
-	@Scheduled(fixedRate = 5000, initialDelay = 3000)
+	@Scheduled(fixedRate = 10*1000, initialDelay = 3000)
 	public void autoFreshConfig() {
 		Set<String> updatedPropertyNames = contextRefresher.refresh();
 		updatedPropertyNames.forEach(propertyName -> LOGGER.info("--------auto fresh key:{},value:{} success!",
